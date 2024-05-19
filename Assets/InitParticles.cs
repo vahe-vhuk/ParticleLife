@@ -65,24 +65,36 @@ public class InitParticles : MonoBehaviour
                 
 				Vector3 dir = Config.conf[obj.Value.tag + i.Node.Value.tag] * (tmp / (tmp.magnitude * tmp.magnitude + 1));
 
-				i.Node.Value.GetComponent<ParticleMove>().dir = dir;
+				Vector3 klo = Config.Position(i.Node.Value.transform.position);
 
+				if (klo != i.Node.Value.transform.position) {
+					i.Node.Value.transform.position = klo;
+					dir *= 5;	
+				}
+
+
+				i.Node.Value.GetComponent<ParticleMove>().dir += dir;
+	
 				i.Node.Value.GetComponent<ParticleMove>().move();
 
-				//obj.Value.GetComponent<ParticleMove>().dir = -dir;
-				//obj.Value.GetComponent<ParticleMove>().move();
 
-            	tmplist.Add(new double[2] {i.Node.Value.transform.position.x, i.Node.Value.transform.position.y }, obj.Value);
+				double[] posx = new double[2] {i.Node.Value.transform.position.x, i.Node.Value.transform.position.y };
+				i.Node.Position = posx;
+
+            	
                 
             }
 
 
-        	
-			list = tmplist;
-        	tmplist = new KDTree<GameObject>(2);
-
 
         }
+
+		foreach (var i in list) {
+			tmplist.Add(i.Position, i.Value);
+		}
+		
+		list = tmplist;
+        tmplist = new KDTree<GameObject>(2);
 
     }
 }

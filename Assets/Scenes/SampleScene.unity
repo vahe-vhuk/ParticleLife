@@ -5270,13 +5270,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1202780688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf825a75731045df96c86ab4498007d, type: 3}
+  m_Script: {fileID: 11500000, guid: cf38571f457044ffd84fc2d2f640eebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RedParticle: {fileID: 1580074258865604984, guid: b1520960180d14694bf0979627a2d377, type: 3}
   BlueParticle: {fileID: 4428114748103069785, guid: 7cbdb730f0a17424e976adb6bfec8e7e, type: 3}
   GreenParticle: {fileID: 5876645662143311122, guid: 9281e9f3cb64d45d9b8f4ffaad1763ea, type: 3}
-  count: 2100
+  count: 1800
 --- !u!1 &1204851204
 GameObject:
   m_ObjectHideFlags: 0
